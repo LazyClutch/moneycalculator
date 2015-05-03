@@ -15,6 +15,9 @@
 		6387CE9D1AF6665B00B76728 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6387CE9C1AF6665B00B76728 /* Images.xcassets */; };
 		6387CEA01AF6665B00B76728 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6387CE9E1AF6665B00B76728 /* LaunchScreen.xib */; };
 		6387CEAC1AF6665B00B76728 /* MoneyCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CEAB1AF6665B00B76728 /* MoneyCalculatorTests.m */; };
+		6387CEBD1AF6686700B76728 /* Bill.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CEBC1AF6686700B76728 /* Bill.m */; };
+		6387CEC01AF6686700B76728 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CEBF1AF6686700B76728 /* Person.m */; };
+		6387CEC51AF66E9100B76728 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CEC41AF66E9100B76728 /* PersonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,12 @@
 		6387CEA51AF6665B00B76728 /* MoneyCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6387CEAA1AF6665B00B76728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6387CEAB1AF6665B00B76728 /* MoneyCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyCalculatorTests.m; sourceTree = "<group>"; };
+		6387CEBB1AF6686700B76728 /* Bill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bill.h; sourceTree = "<group>"; };
+		6387CEBC1AF6686700B76728 /* Bill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bill.m; sourceTree = "<group>"; };
+		6387CEBE1AF6686700B76728 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		6387CEBF1AF6686700B76728 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		6387CEC31AF66E9100B76728 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		6387CEC41AF66E9100B76728 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +92,8 @@
 		6387CE8B1AF6665B00B76728 /* MoneyCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				6387CEC21AF66E7D00B76728 /* Controller */,
+				6387CEC11AF6689600B76728 /* Model */,
 				6387CE901AF6665B00B76728 /* AppDelegate.h */,
 				6387CE911AF6665B00B76728 /* AppDelegate.m */,
 				6387CE961AF6665B00B76728 /* ViewController.h */,
@@ -120,6 +131,26 @@
 				6387CEAA1AF6665B00B76728 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6387CEC11AF6689600B76728 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6387CEBE1AF6686700B76728 /* Person.h */,
+				6387CEBF1AF6686700B76728 /* Person.m */,
+				6387CEBB1AF6686700B76728 /* Bill.h */,
+				6387CEBC1AF6686700B76728 /* Bill.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6387CEC21AF66E7D00B76728 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6387CEC31AF66E9100B76728 /* PersonViewController.h */,
+				6387CEC41AF66E9100B76728 /* PersonViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,7 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6387CEC01AF6686700B76728 /* Person.m in Sources */,
+				6387CEBD1AF6686700B76728 /* Bill.m in Sources */,
 				6387CE921AF6665B00B76728 /* AppDelegate.m in Sources */,
+				6387CEC51AF66E9100B76728 /* PersonViewController.m in Sources */,
 				6387CE951AF6665B00B76728 /* MoneyCalculator.xcdatamodeld in Sources */,
 				6387CE981AF6665B00B76728 /* ViewController.m in Sources */,
 				6387CE8F1AF6665B00B76728 /* main.m in Sources */,
