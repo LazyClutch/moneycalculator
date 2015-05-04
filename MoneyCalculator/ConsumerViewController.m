@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *persons;
+@property (nonatomic, strong) NSMutableArray *selectedRows;
 
 @end
 
@@ -19,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _selectedRows = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
 }
 
@@ -68,13 +71,28 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    if ([_selectedRows containsObject:indexPath]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     cell.textLabel.text = [[_persons objectAtIndex:[indexPath row]] name];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if ([self.selectedRows containsObject:indexPath])
+    {
+        [self.selectedRows removeObject:indexPath];
+    }
+    else
+    {
+        [self.selectedRows addObject:indexPath];
+    }
+    
+    [_tableView reloadData];
 }
 
 /*

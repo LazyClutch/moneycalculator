@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BillViewController : UIViewController
+@interface BillViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

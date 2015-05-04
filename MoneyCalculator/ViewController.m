@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PersonViewController.h"
+#import "BillViewController.h"
 
 @interface ViewController ()
 
@@ -56,6 +57,10 @@
         PersonViewController *personViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonViewController"];
         personViewController.managedObjectContext = self.managedObjectContext;
         [self.navigationController pushViewController:personViewController animated:YES];
+    } else if ([indexPath row] == 1) {
+        BillViewController *billViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BillViewController"];
+        billViewController.managedObjectContext = _managedObjectContext;
+        [self.navigationController pushViewController:billViewController animated:YES];
     }
     
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];

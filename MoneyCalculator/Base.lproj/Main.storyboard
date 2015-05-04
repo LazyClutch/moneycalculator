@@ -205,7 +205,7 @@
         <!--Bill Create View Controller-->
         <scene sceneID="CQs-XC-VjF">
             <objects>
-                <viewController id="jYP-d2-1dQ" customClass="BillCreateViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BillCreateViewController" id="jYP-d2-1dQ" customClass="BillCreateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PiI-h3-ueo"/>
                         <viewControllerLayoutGuide type="bottom" id="fup-5Y-hhA"/>
@@ -291,7 +291,7 @@
         <!--Consumer View Controller-->
         <scene sceneID="Ipe-A6-x6E">
             <objects>
-                <viewController id="yJm-sV-0gG" customClass="ConsumerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConsumerViewController" id="yJm-sV-0gG" customClass="ConsumerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2RC-ne-8Oy"/>
                         <viewControllerLayoutGuide type="bottom" id="oSI-NB-pOL"/>

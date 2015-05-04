@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ConsumerViewController.h"
 
-
-@interface BillCreateViewController : UIViewController
+@interface BillCreateViewController : UIViewController<ConsumerViewDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
