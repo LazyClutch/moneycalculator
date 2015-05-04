@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *persons;
 @property (nonatomic, strong) NSMutableArray *selectedRows;
+@property (nonatomic, strong) NSMutableArray *selectedPersons;
 
 @end
 
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     
     _selectedRows = [[NSMutableArray alloc] init];
+    _selectedPersons = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
 }
 
@@ -51,9 +53,13 @@
 - (IBAction)personConfirm:(id)sender {
     if (_isConsumer) {
         // handle consumer select
+        [self.delegate consumerDidSelect:[_selectedPersons copy]];
     } else {
         // handle payer select
+        [self.delegate payerDidSelect:[_selectedPersons copy]];
     }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITableView
@@ -86,10 +92,12 @@
     if ([self.selectedRows containsObject:indexPath])
     {
         [self.selectedRows removeObject:indexPath];
+        [self.selectedPersons removeObject:_persons[indexPath.row]];
     }
     else
     {
         [self.selectedRows addObject:indexPath];
+        [self.selectedPersons addObject:_persons[indexPath.row]];
     }
     
     [_tableView reloadData];

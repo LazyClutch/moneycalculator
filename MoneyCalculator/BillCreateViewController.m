@@ -7,6 +7,7 @@
 //
 
 #import "BillCreateViewController.h"
+#import "Person.h"
 
 @interface BillCreateViewController ()
 
@@ -19,6 +20,9 @@
 
 @property (nonatomic, strong) ConsumerViewController *consumerViewController;
 
+@property (nonatomic, strong) NSArray *selectedConsumers;
+@property (nonatomic, strong) NSArray *selectedPayers;
+
 @end
 
 @implementation BillCreateViewController
@@ -28,6 +32,7 @@
     _consumerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ConsumerViewController"];
     _consumerViewController.delegate = self;
     _consumerViewController.managedObjectContext = _managedObjectContext;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -35,6 +40,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)choosePersons:(id)sender {
     _consumerViewController.isConsumer = YES;
     [self presentViewController:_consumerViewController animated:YES completion:nil];
@@ -45,13 +51,30 @@
     [self presentViewController:_consumerViewController animated:YES completion:nil];
 }
 
+- (IBAction)return:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - ConsumerViewDelegate
 - (void)consumerDidSelect:(NSArray *)consumers{
-    
+    _selectedConsumers = consumers;
+    __block NSString *persons = [[NSString alloc] init];
+    [consumers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSString *name = [(Person *)obj name];
+        persons = [persons stringByAppendingString:name];
+        persons = [persons stringByAppendingString:@" "];
+    }];
+    _personsLabel.text = persons;
 }
 
 - (void)payerDidSelect:(NSArray *)payer{
-    
+    _selectedPayers = payer;
+    __block NSString *persons = [[NSString alloc] init];
+    [payer enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        persons = [persons stringByAppendingString:[(Person *)obj name]];
+        persons = [persons stringByAppendingString:@" "];
+    }];
+    _payerLabel.text = persons;
 }
 
 /*
