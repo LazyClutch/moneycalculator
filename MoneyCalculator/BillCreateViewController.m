@@ -1,20 +1,24 @@
 //
-//  BillViewController.m
+//  BillCreateViewController.m
 //  MoneyCalculator
 //
 //  Created by 李韧 on 15/5/4.
 //  Copyright (c) 2015年 Lazy. All rights reserved.
 //
 
-#import "BillViewController.h"
+#import "BillCreateViewController.h"
 
-@interface BillViewController ()
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface BillCreateViewController ()
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *location;
+@property (weak, nonatomic) IBOutlet UITextField *price;
+@property (weak, nonatomic) IBOutlet UITextField *content;
+@property (weak, nonatomic) IBOutlet UILabel *personsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *payerLabel;
 
 @end
 
-@implementation BillViewController
+@implementation BillCreateViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +28,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)choosePersons:(id)sender {
+    
+}
+
+- (IBAction)choosePayers:(id)sender {
+    
 }
 
 /*

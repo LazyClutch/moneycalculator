@@ -2,7 +2,7 @@
 //  Bill.m
 //  MoneyCalculator
 //
-//  Created by Lazy on 15/5/3.
+//  Created by 李韧 on 15/5/4.
 //  Copyright (c) 2015年 Lazy. All rights reserved.
 //
 
@@ -12,10 +12,11 @@
 
 @implementation Bill
 
+@dynamic content;
 @dynamic date;
 @dynamic location;
 @dynamic price;
-@dynamic content;
 @dynamic personsIncluded;
+@dynamic payer;
 
 @end

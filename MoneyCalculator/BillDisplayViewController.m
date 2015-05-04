@@ -1,20 +1,24 @@
 //
-//  BillViewController.m
+//  BillDisplayViewController.m
 //  MoneyCalculator
 //
 //  Created by 李韧 on 15/5/4.
 //  Copyright (c) 2015年 Lazy. All rights reserved.
 //
 
-#import "BillViewController.h"
+#import "BillDisplayViewController.h"
 
-@interface BillViewController ()
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface BillDisplayViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *personsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *payerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 @end
 
-@implementation BillViewController
+@implementation BillDisplayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

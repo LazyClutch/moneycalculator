@@ -1,20 +1,18 @@
 //
-//  BillViewController.m
+//  ConsumerViewController.m
 //  MoneyCalculator
 //
 //  Created by 李韧 on 15/5/4.
 //  Copyright (c) 2015年 Lazy. All rights reserved.
 //
 
-#import "BillViewController.h"
+#import "ConsumerViewController.h"
 
-@interface BillViewController ()
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface ConsumerViewController ()
 
 @end
 
-@implementation BillViewController
+@implementation ConsumerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
