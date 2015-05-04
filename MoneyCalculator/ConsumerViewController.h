@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface ConsumerViewController : UIViewController
+@class ConsumerViewController;
+
+@protocol ConsumerViewDelegate <NSObject>
+
+- (void)consumerDidSelect:(NSArray *)consumers;
+- (void)payerDidSelect:(NSArray *)payer;
+
+@end
+
+@interface ConsumerViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) id<ConsumerViewDelegate> delegate;
+@property (nonatomic, assign) BOOL isConsumer;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
