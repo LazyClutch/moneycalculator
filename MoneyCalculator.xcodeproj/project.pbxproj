@@ -18,6 +18,7 @@
 		6387CEBD1AF6686700B76728 /* Bill.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CEBC1AF6686700B76728 /* Bill.m */; };
 		6387CEC01AF6686700B76728 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CEBF1AF6686700B76728 /* Person.m */; };
 		6387CEC51AF66E9100B76728 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CEC41AF66E9100B76728 /* PersonViewController.m */; };
+		9CA3F90D1AF750E20030DC1E /* BillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3F90C1AF750E20030DC1E /* BillViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		6387CEBF1AF6686700B76728 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		6387CEC31AF66E9100B76728 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
 		6387CEC41AF66E9100B76728 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		9CA3F90B1AF750E20030DC1E /* BillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillViewController.h; sourceTree = "<group>"; };
+		9CA3F90C1AF750E20030DC1E /* BillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 			children = (
 				6387CEC31AF66E9100B76728 /* PersonViewController.h */,
 				6387CEC41AF66E9100B76728 /* PersonViewController.m */,
+				9CA3F90B1AF750E20030DC1E /* BillViewController.h */,
+				9CA3F90C1AF750E20030DC1E /* BillViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6387CEC01AF6686700B76728 /* Person.m in Sources */,
+				9CA3F90D1AF750E20030DC1E /* BillViewController.m in Sources */,
 				6387CEBD1AF6686700B76728 /* Bill.m in Sources */,
 				6387CE921AF6665B00B76728 /* AppDelegate.m in Sources */,
 				6387CEC51AF66E9100B76728 /* PersonViewController.m in Sources */,
@@ -454,6 +460,7 @@
 				6387CEB11AF6665B00B76728 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6387CEB21AF6665B00B76728 /* Build configuration list for PBXNativeTarget "MoneyCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +469,7 @@
 				6387CEB41AF6665B00B76728 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

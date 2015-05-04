@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
 

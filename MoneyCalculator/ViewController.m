@@ -54,6 +54,7 @@
     
     if ([indexPath row] == 0) {
         PersonViewController *personViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonViewController"];
+        personViewController.managedObjectContext = self.managedObjectContext;
         [self.navigationController pushViewController:personViewController animated:YES];
     }
     
