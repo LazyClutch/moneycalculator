@@ -33,6 +33,10 @@
     _consumerViewController.delegate = self;
     _consumerViewController.managedObjectContext = _managedObjectContext;
     
+    _location.delegate = self;
+    _price.delegate = self;
+    _content.delegate = self;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -55,6 +59,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)addBill:(id)sender {
+    if ([_price.text isEqualToString:@""] || [_personsLabel.text isEqualToString:@""] || [_payerLabel.text isEqualToString:@""]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"警告" message:@"请填写完整" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+}
+
 #pragma mark - ConsumerViewDelegate
 - (void)consumerDidSelect:(NSArray *)consumers{
     _selectedConsumers = consumers;
@@ -75,6 +89,26 @@
         persons = [persons stringByAppendingString:@" "];
     }];
     _payerLabel.text = persons;
+}
+
+#pragma mark - UITextView
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.2f animations:^{
+        CGRect frame = self.view.frame;
+        self.view.frame = CGRectMake(frame.origin.x, -100, frame.size.width, frame.size.height);
+    }];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.2f animations:^{
+        CGRect frame = self.view.frame;
+        self.view.frame = CGRectMake(frame.origin.x, 0, frame.size.width, frame.size.height);
+    }];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 /*

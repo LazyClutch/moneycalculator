@@ -270,6 +270,9 @@
                                 <state key="normal" title="添加">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addBill:" destination="jYP-d2-1dQ" eventType="touchUpInside" id="RqS-ik-xKZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdD-ro-4g7">
                                 <rect key="frame" x="94" y="469" width="30" height="30"/>

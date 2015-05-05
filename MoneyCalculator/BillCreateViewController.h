@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "ConsumerViewController.h"
 
-@interface BillCreateViewController : UIViewController<ConsumerViewDelegate>
+@interface BillCreateViewController : UIViewController<ConsumerViewDelegate,UITextFieldDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
