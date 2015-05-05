@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "PersonViewController.h"
 #import "BillViewController.h"
+#import "TotalConsumationViewController.h"
 
 @interface ViewController ()
 
@@ -55,12 +56,16 @@
     
     if ([indexPath row] == 0) {
         PersonViewController *personViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonViewController"];
-        personViewController.managedObjectContext = self.managedObjectContext;
+        personViewController.managedObjectContext = _managedObjectContext;
         [self.navigationController pushViewController:personViewController animated:YES];
     } else if ([indexPath row] == 1) {
         BillViewController *billViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BillViewController"];
         billViewController.managedObjectContext = _managedObjectContext;
         [self.navigationController pushViewController:billViewController animated:YES];
+    } else if ([indexPath row] == 2){
+        TotalConsumationViewController *tcVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TotalConsumationViewController"];
+        tcVC.managedObjectContext = _managedObjectContext;
+        [self.navigationController pushViewController:tcVC animated:YES];
     }
     
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];

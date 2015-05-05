@@ -68,6 +68,9 @@
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
+    
+    // create bill
+    
     Bill *bill = [NSEntityDescription insertNewObjectForEntityForName:@"Bill" inManagedObjectContext:_managedObjectContext];
     bill.date = _datePicker.date;
     bill.content = _content.text;
@@ -76,6 +79,35 @@
     bill.personsIncluded = [NSSet setWithArray:_selectedConsumers];
     bill.payer = [NSSet setWithArray:_selectedPayers];
     
+    [_managedObjectContext save:nil];
+    
+    // update person's consumation
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    request.predicate = [NSPredicate predicateWithFormat:@"SELF IN %@",_selectedConsumers];
+    NSError *error;
+    NSArray *result = [_managedObjectContext executeFetchRequest:request error:&error];
+    if (!error && [result count] != 0) {
+        CGFloat pricePerPerson = [_price.text floatValue] / (double)[result count];
+        for (Person *p in result) {
+            CGFloat consumerValue = p.totalConsume.floatValue;
+            consumerValue += pricePerPerson;
+            p.totalConsume = [NSNumber numberWithFloat:consumerValue];
+        }
+    }
+    [_managedObjectContext save:nil];
+    
+    // update person's payment
+    NSFetchRequest *payrequest = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    payrequest.predicate = [NSPredicate predicateWithFormat:@"SELF IN %@",_selectedPayers];
+    NSArray *payresult = [_managedObjectContext executeFetchRequest:payrequest error:&error];
+    if (!error && [payresult count] != 0) {
+        CGFloat pricePerPerson = [_price.text floatValue] / (double)[payresult count];
+        for (Person *p in payresult) {
+            CGFloat consumerValue = p.totalPay.floatValue;
+            consumerValue += pricePerPerson;
+            p.totalPay = [NSNumber numberWithFloat:consumerValue];
+        }
+    }
     [_managedObjectContext save:nil];
     
     [self dismissViewControllerAnimated:YES completion:nil];

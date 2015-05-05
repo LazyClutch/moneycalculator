@@ -359,6 +359,38 @@
             </objects>
             <point key="canvasLocation" x="4142.5" y="362.5"/>
         </scene>
+        <!--Total Consumation View Controller-->
+        <scene sceneID="Z7U-Ba-4um">
+            <objects>
+                <viewController storyboardIdentifier="TotalConsumationViewController" id="j5m-mN-3Ha" customClass="TotalConsumationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gcd-sB-icZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="zfB-ou-jZM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P6A-Yi-nEw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wiw-fA-frw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="j5m-mN-3Ha" id="Kai-ju-4VT"/>
+                                    <outlet property="delegate" destination="j5m-mN-3Ha" id="5vA-X0-NBx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wiw-fA-frw" id="lF8-fB-m67"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7oY-rL-aOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4576.5" y="362.5"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="IsD-Y2-f6z">
             <objects>
