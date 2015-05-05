@@ -10,6 +10,7 @@
 #import "BillCreateViewController.h"
 #import "BillDisplayViewController.h"
 #import "Bill.h"
+#import "Person.h"
 
 @interface BillViewController ()
 
@@ -101,6 +102,38 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        Bill *bill = _bills[indexPath.row];
+        
+        // update person's consumation
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+        request.predicate = [NSPredicate predicateWithFormat:@"SELF IN %@",bill.personsIncluded];
+        NSError *error;
+        NSArray *result = [_managedObjectContext executeFetchRequest:request error:&error];
+        if (!error && [result count] != 0) {
+            CGFloat pricePerPerson = [bill.price floatValue] / (double)[result count];
+            for (Person *p in result) {
+                CGFloat consumerValue = p.totalConsume.floatValue;
+                consumerValue -= pricePerPerson;
+                p.totalConsume = [NSNumber numberWithFloat:consumerValue];
+            }
+        }
+        [_managedObjectContext save:nil];
+        
+        // update person's payment
+        NSFetchRequest *payrequest = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+        payrequest.predicate = [NSPredicate predicateWithFormat:@"SELF IN %@",bill.payer];
+        NSArray *payresult = [_managedObjectContext executeFetchRequest:payrequest error:&error];
+        if (!error && [payresult count] != 0) {
+            CGFloat pricePerPerson = [bill.price floatValue] / (double)[payresult count];
+            for (Person *p in payresult) {
+                CGFloat consumerValue = p.totalPay.floatValue;
+                consumerValue -= pricePerPerson;
+                p.totalPay = [NSNumber numberWithFloat:consumerValue];
+            }
+        }
+        [_managedObjectContext save:nil];
+        
         [_managedObjectContext deleteObject:_bills[indexPath.row]];
         [_bills removeObjectAtIndex:indexPath.row];
         // Delete the row from the data source.

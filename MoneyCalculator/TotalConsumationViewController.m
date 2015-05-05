@@ -68,7 +68,7 @@
     cell.textLabel.text = [person name];
     NSNumber *pay = person.totalPay;
     NSNumber *consume = person.totalConsume;
-    CGFloat delta = [pay floatValue] - [consume floatValue];
+    CGFloat delta = [consume floatValue] - [pay floatValue];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"实花:%0.2f 应花:%0.2f 应付:%0.2f",[person.totalPay floatValue],[person.totalConsume floatValue],delta];
     return cell;
 }
