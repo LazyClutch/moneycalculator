@@ -7,6 +7,7 @@
 //
 
 #import "BillDisplayViewController.h"
+#import "Person.h"
 
 @interface BillDisplayViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -28,6 +29,39 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *currentDateStr = [dateFormat stringFromDate:_bill.date];
+    _dateLabel.text = currentDateStr;
+    _locationLabel.text = _bill.location;
+    __block NSString *persons = [[NSString alloc] init];
+    [_bill.personsIncluded enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        NSString *name = [(Person *)obj name];
+        persons = [persons stringByAppendingString:name];
+        persons = [persons stringByAppendingString:@" "];
+    }];
+    _personsLabel.text = persons;
+    __block NSString *payer = [[NSString alloc] init];
+    [_bill.payer enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        NSString *name = [(Person *)obj name];
+        payer = [payer stringByAppendingString:name];
+        payer = [payer stringByAppendingString:@" "];
+    }];
+    _payerLabel.text = payer;
+    _priceLabel.text = [_bill.price description];
+    _contentLabel.text = _bill.content;
+}
+
+- (void)setBill:(Bill *)bill{
+    _bill = bill;
+}
+
+- (IBAction)return:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

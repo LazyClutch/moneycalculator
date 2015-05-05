@@ -8,6 +8,7 @@
 
 #import "BillViewController.h"
 #import "BillCreateViewController.h"
+#import "BillDisplayViewController.h"
 #import "Bill.h"
 
 @interface BillViewController ()
@@ -27,6 +28,11 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadBill];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,6 +41,18 @@
 - (void)initView{
     self.navigationItem.title = @"账单总览";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBill)];
+}
+
+- (void)loadBill{
+    if (_managedObjectContext != nil) {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Bill"];
+        NSError *error;
+        NSArray *array = [_managedObjectContext executeFetchRequest:request error:&error];
+        if (!error) {
+            _bills = [array mutableCopy];
+        }
+        [_tableView reloadData];
+    }
 }
 
 - (void)addBill{
@@ -56,15 +74,43 @@
     static NSString *cellIdentifier = @"cellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
-    cell.textLabel.text = [[_bills objectAtIndex:[indexPath row]] content];
+    Bill *bill = [_bills objectAtIndex:[indexPath row]];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *currentDateStr = [dateFormat stringFromDate:bill.date];
+    cell.textLabel.text = bill.content;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"时间:%@ 总额:%@",currentDateStr,bill.price];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    BillDisplayViewController *displayViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BillDisplayViewController"];
+    displayViewController.bill = _bills[indexPath.row];
+    [self presentViewController:displayViewController animated:YES completion:nil];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [_managedObjectContext deleteObject:_bills[indexPath.row]];
+        [_bills removeObjectAtIndex:indexPath.row];
+        // Delete the row from the data source.
+        [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [_managedObjectContext save:nil];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
 }
 
 /*

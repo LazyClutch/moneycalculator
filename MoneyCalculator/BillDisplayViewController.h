@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "Bill.h"
 
 @interface BillDisplayViewController : UIViewController
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-
+@property (nonatomic, strong) Bill *bill;
 
 @end

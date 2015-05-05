@@ -8,6 +8,7 @@
 
 #import "BillCreateViewController.h"
 #import "Person.h"
+#import "Bill.h"
 
 @interface BillCreateViewController ()
 
@@ -60,13 +61,24 @@
 }
 
 - (IBAction)addBill:(id)sender {
-    if ([_price.text isEqualToString:@""] || [_personsLabel.text isEqualToString:@""] || [_payerLabel.text isEqualToString:@""]) {
+    if ([_price.text isEqualToString:@""] || [_personsLabel.text isEqualToString:@""] || [_payerLabel.text isEqualToString:@""] || [_content.text isEqualToString:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"警告" message:@"请填写完整" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:okAction];
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
+    Bill *bill = [NSEntityDescription insertNewObjectForEntityForName:@"Bill" inManagedObjectContext:_managedObjectContext];
+    bill.date = _datePicker.date;
+    bill.content = _content.text;
+    bill.price = [NSNumber numberWithFloat:[_price.text floatValue]];
+    bill.location = _location.text;
+    bill.personsIncluded = [NSSet setWithArray:_selectedConsumers];
+    bill.payer = [NSSet setWithArray:_selectedPayers];
+    
+    [_managedObjectContext save:nil];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - ConsumerViewDelegate

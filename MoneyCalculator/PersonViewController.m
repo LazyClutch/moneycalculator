@@ -106,7 +106,9 @@
         [_managedObjectContext deleteObject:_persons[indexPath.row]];
         [_persons removeObjectAtIndex:indexPath.row];
         // Delete the row from the data source.
-        [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];      
+        [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [_managedObjectContext save:nil];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

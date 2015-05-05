@@ -2,7 +2,7 @@
 //  Person.h
 //  MoneyCalculator
 //
-//  Created by Lazy on 15/5/3.
+//  Created by Lazy on 15/5/5.
 //  Copyright (c) 2015年 Lazy. All rights reserved.
 //
 
@@ -14,7 +14,8 @@
 @interface Person : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * totalCount;
+@property (nonatomic, retain) NSNumber * totalPay;
+@property (nonatomic, retain) NSNumber * totalConsume;
 @property (nonatomic, retain) NSSet *bills;
 @end
 
