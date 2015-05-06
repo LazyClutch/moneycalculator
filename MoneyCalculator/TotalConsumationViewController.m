@@ -7,6 +7,7 @@
 //
 
 #import "TotalConsumationViewController.h"
+#import "PersonBillsViewController.h"
 #import "Person.h"
 
 @interface TotalConsumationViewController ()
@@ -76,6 +77,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    PersonBillsViewController *personBillVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonBillsViewController"];
+    personBillVC.managedObjectContext = _managedObjectContext;
+    personBillVC.person = [_persons objectAtIndex:[indexPath row]];
+    [self presentViewController:personBillVC animated:YES completion:nil];
 }
 
 /*
