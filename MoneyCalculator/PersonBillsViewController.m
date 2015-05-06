@@ -38,8 +38,8 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     _titleLabel.text = _person.name;
-    _totalPayLabel.text = [NSString stringWithFormat:@"%@",_person.totalPay];
-    _totalConsumeLabel.text = [NSString stringWithFormat:@"%@",_person.totalConsume];
+    _totalPayLabel.text = [NSString stringWithFormat:@"总花费:%@",_person.totalPay];
+    _totalConsumeLabel.text = [NSString stringWithFormat:@"总消费:%@",_person.totalConsume];
     [self loadBills];
 }
 

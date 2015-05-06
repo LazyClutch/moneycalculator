@@ -123,6 +123,7 @@
         persons = [persons stringByAppendingString:@" "];
     }];
     _personsLabel.text = persons;
+    [_personsLabel sizeToFit];
 }
 
 - (void)payerDidSelect:(NSArray *)payer{
@@ -133,6 +134,7 @@
         persons = [persons stringByAppendingString:@" "];
     }];
     _payerLabel.text = persons;
+    [_payerLabel sizeToFit];
 }
 
 #pragma mark - UITextView

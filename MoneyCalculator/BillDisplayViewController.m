@@ -45,6 +45,7 @@
         persons = [persons stringByAppendingString:@" "];
     }];
     _personsLabel.text = persons;
+    [_personsLabel sizeToFit];
     __block NSString *payer = [[NSString alloc] init];
     [_bill.payer enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
         NSString *name = [(Person *)obj name];
@@ -52,6 +53,7 @@
         payer = [payer stringByAppendingString:@" "];
     }];
     _payerLabel.text = payer;
+    [_payerLabel sizeToFit];
     _priceLabel.text = [_bill.price description];
     _contentLabel.text = _bill.content;
 }
