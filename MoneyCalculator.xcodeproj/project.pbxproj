@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		630242691AF8B5F800FFF816 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 630242681AF8B5F800FFF816 /* Person.m */; };
 		6387CE8F1AF6665B00B76728 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CE8E1AF6665B00B76728 /* main.m */; };
 		6387CE921AF6665B00B76728 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CE911AF6665B00B76728 /* AppDelegate.m */; };
 		6387CE951AF6665B00B76728 /* MoneyCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6387CE931AF6665B00B76728 /* MoneyCalculator.xcdatamodeld */; };
@@ -19,9 +18,10 @@
 		6387CEC51AF66E9100B76728 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6387CEC41AF66E9100B76728 /* PersonViewController.m */; };
 		6396F4361AF9087A00C719AB /* TotalConsumationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6396F4351AF9087A00C719AB /* TotalConsumationViewController.m */; };
 		63B1805B1AF7BFA60055D68B /* BillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1805A1AF7BFA60055D68B /* BillViewController.m */; };
+		63CF9C221AFBAA6C00FD2011 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CF9C211AFBAA6C00FD2011 /* Person.m */; };
+		63CF9C251AFBAA6C00FD2011 /* Bill.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CF9C241AFBAA6C00FD2011 /* Bill.m */; };
 		9CA3F9101AF7524D0030DC1E /* BillDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3F90F1AF7524D0030DC1E /* BillDisplayViewController.m */; };
 		9CA3F9131AF752600030DC1E /* BillCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3F9121AF752600030DC1E /* BillCreateViewController.m */; };
-		9CA3F91C1AF75D1D0030DC1E /* Bill.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3F91B1AF75D1D0030DC1E /* Bill.m */; };
 		9CA3F91F1AF75D690030DC1E /* ConsumerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3F91E1AF75D690030DC1E /* ConsumerViewController.m */; };
 		9CCF3EE11AF9AEAB00717082 /* PersonBillsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF3EE01AF9AEAB00717082 /* PersonBillsViewController.m */; };
 /* End PBXBuildFile section */
@@ -37,8 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		630242671AF8B5F800FFF816 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		630242681AF8B5F800FFF816 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		6387CE891AF6665B00B76728 /* MoneyCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6387CE8D1AF6665B00B76728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6387CE8E1AF6665B00B76728 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,12 +57,14 @@
 		6396F4351AF9087A00C719AB /* TotalConsumationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalConsumationViewController.m; sourceTree = "<group>"; };
 		63B180591AF7BFA60055D68B /* BillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillViewController.h; sourceTree = "<group>"; };
 		63B1805A1AF7BFA60055D68B /* BillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillViewController.m; sourceTree = "<group>"; };
+		63CF9C201AFBAA6C00FD2011 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		63CF9C211AFBAA6C00FD2011 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		63CF9C231AFBAA6C00FD2011 /* Bill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bill.h; sourceTree = "<group>"; };
+		63CF9C241AFBAA6C00FD2011 /* Bill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bill.m; sourceTree = "<group>"; };
 		9CA3F90E1AF7524D0030DC1E /* BillDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillDisplayViewController.h; sourceTree = "<group>"; };
 		9CA3F90F1AF7524D0030DC1E /* BillDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillDisplayViewController.m; sourceTree = "<group>"; };
 		9CA3F9111AF752600030DC1E /* BillCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillCreateViewController.h; sourceTree = "<group>"; };
 		9CA3F9121AF752600030DC1E /* BillCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillCreateViewController.m; sourceTree = "<group>"; };
-		9CA3F91A1AF75D1D0030DC1E /* Bill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bill.h; sourceTree = "<group>"; };
-		9CA3F91B1AF75D1D0030DC1E /* Bill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bill.m; sourceTree = "<group>"; };
 		9CA3F91D1AF75D690030DC1E /* ConsumerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumerViewController.h; sourceTree = "<group>"; };
 		9CA3F91E1AF75D690030DC1E /* ConsumerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumerViewController.m; sourceTree = "<group>"; };
 		9CCF3EDF1AF9AEAB00717082 /* PersonBillsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonBillsViewController.h; sourceTree = "<group>"; };
@@ -154,10 +154,10 @@
 		6387CEC11AF6689600B76728 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				630242671AF8B5F800FFF816 /* Person.h */,
-				630242681AF8B5F800FFF816 /* Person.m */,
-				9CA3F91A1AF75D1D0030DC1E /* Bill.h */,
-				9CA3F91B1AF75D1D0030DC1E /* Bill.m */,
+				63CF9C231AFBAA6C00FD2011 /* Bill.h */,
+				63CF9C241AFBAA6C00FD2011 /* Bill.m */,
+				63CF9C201AFBAA6C00FD2011 /* Person.h */,
+				63CF9C211AFBAA6C00FD2011 /* Person.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 				TargetAttributes = {
 					6387CE881AF6665B00B76728 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = 2XYAGB2947;
+						DevelopmentTeam = GS9T9X284M;
 					};
 					6387CEA41AF6665B00B76728 = {
 						CreatedOnToolsVersion = 6.3;
@@ -284,14 +284,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63CF9C251AFBAA6C00FD2011 /* Bill.m in Sources */,
 				6396F4361AF9087A00C719AB /* TotalConsumationViewController.m in Sources */,
-				9CA3F91C1AF75D1D0030DC1E /* Bill.m in Sources */,
+				63CF9C221AFBAA6C00FD2011 /* Person.m in Sources */,
 				9CA3F91F1AF75D690030DC1E /* ConsumerViewController.m in Sources */,
 				9CCF3EE11AF9AEAB00717082 /* PersonBillsViewController.m in Sources */,
 				9CA3F9101AF7524D0030DC1E /* BillDisplayViewController.m in Sources */,
 				9CA3F9131AF752600030DC1E /* BillCreateViewController.m in Sources */,
 				63B1805B1AF7BFA60055D68B /* BillViewController.m in Sources */,
-				630242691AF8B5F800FFF816 /* Person.m in Sources */,
 				6387CE921AF6665B00B76728 /* AppDelegate.m in Sources */,
 				6387CEC51AF66E9100B76728 /* PersonViewController.m in Sources */,
 				6387CE951AF6665B00B76728 /* MoneyCalculator.xcdatamodeld in Sources */,
@@ -355,6 +355,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -398,6 +399,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -423,9 +425,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MoneyCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -434,9 +438,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MoneyCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -444,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -463,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

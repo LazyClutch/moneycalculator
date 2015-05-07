@@ -116,6 +116,7 @@
                 CGFloat consumerValue = p.totalConsume.floatValue;
                 consumerValue -= pricePerPerson;
                 p.totalConsume = [NSNumber numberWithFloat:consumerValue];
+                
             }
         }
         [_managedObjectContext save:nil];

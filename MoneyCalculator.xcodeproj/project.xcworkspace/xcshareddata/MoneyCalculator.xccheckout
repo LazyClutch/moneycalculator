@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>02A7085C-1650-49AB-847D-3EE6ACB5832E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>MoneyCalculator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8D622B7EE5A3ADC8969899102EECC821541C9E4F</key>
 		<string>https://bitbucket.org/lr_5146/moneycalculator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MoneyCalculator.xcodeproj/project.xcworkspace</string>
+	<string>MoneyCalculator.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8D622B7EE5A3ADC8969899102EECC821541C9E4F</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>8D622B7EE5A3ADC8969899102EECC821541C9E4F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>moneycalculator</string>
+			<string>MoneyCalculator</string>
 		</dict>
 	</array>
 </dict>

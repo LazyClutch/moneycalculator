@@ -2,7 +2,7 @@
 //  Person.m
 //  MoneyCalculator
 //
-//  Created by Lazy on 15/5/5.
+//  Created by Lazy on 15/5/7.
 //  Copyright (c) 2015年 Lazy. All rights reserved.
 //
 
@@ -13,8 +13,9 @@
 @implementation Person
 
 @dynamic name;
-@dynamic totalPay;
 @dynamic totalConsume;
-@dynamic bills;
+@dynamic totalPay;
+@dynamic payedBills;
+@dynamic consumedBills;
 
 @end

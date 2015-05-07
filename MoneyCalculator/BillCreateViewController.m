@@ -76,8 +76,8 @@
     bill.content = _content.text;
     bill.price = [NSNumber numberWithFloat:[_price.text floatValue]];
     bill.location = _location.text;
-    bill.personsIncluded = [NSSet setWithArray:_selectedConsumers];
-    bill.payer = [NSSet setWithArray:_selectedPayers];
+    [bill addPersonsIncluded:[NSSet setWithArray:_selectedConsumers]];
+    [bill addPayer:[NSSet setWithArray:_selectedPayers]];
     
     [_managedObjectContext save:nil];
     

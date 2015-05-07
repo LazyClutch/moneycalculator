@@ -5,17 +5,18 @@
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="payer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
-        <relationship name="personsIncluded" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="bills" inverseEntity="Person" syncable="YES"/>
+        <relationship name="payer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="payedBills" inverseEntity="Person" syncable="YES"/>
+        <relationship name="personsIncluded" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="consumedBills" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="totalConsume" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="totalPay" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="bills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bill" inverseName="personsIncluded" inverseEntity="Bill" syncable="YES"/>
+        <relationship name="consumedBills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bill" inverseName="personsIncluded" inverseEntity="Bill" syncable="YES"/>
+        <relationship name="payedBills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bill" inverseName="payer" inverseEntity="Bill" syncable="YES"/>
     </entity>
     <elements>
         <element name="Bill" positionX="-54" positionY="9" width="128" height="133"/>
-        <element name="Person" positionX="-288" positionY="33" width="128" height="103"/>
+        <element name="Person" positionX="-288" positionY="33" width="128" height="118"/>
     </elements>
 </model>
